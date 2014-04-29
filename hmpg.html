@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Homepage
+    </title>
+    <script type="text/Javascript" href="calendario.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="menu.css" />
+    <link rel="stylesheet" type="text/css" href="hmpg.css" />
+  </head>
+  
+  <body
+  onload="updateClock()">
+    <div
+    class="keepcentered">
+      <center>
+        <div
+        id="time">
+        </div>
+      </center>
+    </div>
+    <div
+    class="cc">
+      <center>
+        <div
+        id="date">
+        </div>
+      </center>
+    </div>
+    
+    <div
+    class="calendar">
+      <center>
+        <div
+        id="cal">
+        </div>
+      </center>
+    </div>
+    
+    <div class="menu" id="menu">
+      <!-- Lista generale -->
+      <ul>
+        <!-- 1° Elemento: Home -->
+        <li>
+          <a id="home">
+            Archlinux
+          </a>
+          <ul>
+            <li>
+              <a href="http://www.archlinux.it/">
+                Homepage
+              </a>
+            </li>
+            <li>
+              <a href="https://wiki.archlinux.org/">
+                Archwiki
+              </a>
+            </li>
+            <li>
+              <a href="http://www.archlinux.it/forum/">
+                Forum
+              </a>
+            </li>
+          </ul>
+        </li>
+        
+        <!-- 2° Elemento: Feed -->
+        <li>
+          <a href="https://www.google.it/" id="feed">
+            Google
+          </a>
+          <ul>
+            <li>
+              <a href="http://plus.google.com">
+                Google+
+              </a>
+            </li>
+            <li>
+              <a href="https://drive.google.com/">
+                Drive
+              </a>
+            </li>
+            <li>
+              <a href="https://maps.google.it">
+                Maps
+              </a>
+            </li>
+            <li>
+              <a href="http://translate.google.it/">
+                Translate
+              </a>
+            </li>
+          </ul>
+        </li>
+        
+        <!-- 3° Elemento: Sezioni -->
+        <li>
+          <a id="sezioni">
+            Social
+          </a>
+          <!-- Voci annidate 2° Elemento -->
+          <ul>
+            <li>
+              <a href="https://it-it.facebook.com/">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com">
+                Twitter
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- 4° Elemento: Blog --->
+        <li>
+          <a id="blog">
+            Blog
+          </a>
+          <ul>
+            <li>
+              <a href="https://github.com">
+                Github
+              </a>
+            </li>
+            <li>
+              <a href="http://www.lffl.org">
+                lffl
+              </a>
+            </li>
+            <li>
+              <a href="http://www.reddit.com/r/unixporn">
+                Unixporn
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- 5° Elemento: Streaming --->
+        <li>
+          <a id ="stream">
+            Streaming
+          </a>
+          <ul>
+            <li>
+              <a href="http://www.youtube.com/?gl=IT&hl=it">
+                Youtube
+              </a>
+            </li>
+            <li>
+              <a href="http://www.cineblog01.tv">
+                Cineblog01
+              </a>
+            </li>
+            <li>
+              <a href="http://archive.forumcommunity.net/?t=55769113">
+                AnimeStreaming
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+    <center>
+      <FORM method=GET action="http://www.google.com/search">
+        <TABLE>
+          <tr>
+            <center>
+              <td>
+                Here you can solve all your question
+                <A HREF="http://www.google.com">
+                </A>
+                <INPUT TYPE=text name=q size=60 maxlength=400 value="">
+                <INPUT TYPE=hidden name=hl value=it>
+                <INPUT type=submit name=btnG VALUE="Cerca con Google">
+              </td>
+            </center>
+          </tr>
+        </TABLE>
+      </FORM>
+    </center>
+    <script>
+      function updateClock()
+      {
+        Date.getMinutesTwoDigits = function()
+          {
+            var retval = now.getMinutes();
+            if (retval < 10) return ("0" + retval.toString());
+            else return retval.toString();
+          }
+          Date.getHoursModTwelve = function()
+            {
+              var retval = now.getHours();
+              retval = retval%24;
+              if (retval == 0) retval = 00;
+              return retval;
+            }
+            var now = new Date(),
+                time = Date.getHoursModTwelve() + ':' + Date.getMinutesTwoDigits();
+        document.getElementById('time').innerHTML = ["", time].join('');
+        setTimeout(updateClock, 1000);
+      }
+    </script>
+    <script language="Javascript">
+      <!--
+        function crea()
+        {
+          for (i = 0; i<crea.arguments.length; i++)
+            this[i + 1] = crea.arguments[i];
+        }
+        
+        var mesi = new crea('Gennaio','Febbraio','Marzo',
+                            'Aprile','Maggio','Giugno','Luglio','Agosto','Settembre',
+                            'Ottobre','Novembre','Dicembre');
+      var date = new Date();
+      var gg  = date.getDate();
+      var mese = date.getMonth();
+      var yy = date.getYear();
+      var yyyy = (yy < 1000) ? yy + 1900 : yy;
+      
+      document.getElementById('date').innerHTML = ["", gg + " " + mesi[mese] + " " + yyyy].join(' ');
+      //-->
+    </script>
+  </body>
+  
+</html>
