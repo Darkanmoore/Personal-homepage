@@ -1,5 +1,5 @@
 #menu {
-    width: 800px;
+    width: 1000px;
     margin: 150px auto;
 }
  
@@ -37,7 +37,7 @@
 #sezioni { background: url("rss.png") no-repeat 10px 7px; }
 #blog { background: url("bold.png") no-repeat 10px 7px; }
 #stream { background: url("camera.png") no-repeat 10px 7px; }
- 
+#varie { background: url("varie.png") no-repeat 10px 7px; } 
  
 #home:hover {
     border-bottom: 3px solid #32CD32; 
@@ -57,6 +57,10 @@
 
 #stream:hover{
    border-bottom:  3px solid #EE82EE;
+}
+
+#Varie:hover{
+   border-bottom:  3px solid #00FFFF;
 }
 
 #home li a:hover{
