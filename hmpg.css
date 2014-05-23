@@ -11,18 +11,18 @@ body{
 
 .keepcentered {
 position:absolute;
-top:100px;
-left:500px;
+top:120px;
+left:450px;
 width:240px;
 height:100px;
 font-weight:101;
 font-size:180px;
-color:#FFFFFF;
+color:#000000;
 opacity:1;
 }
 
 .cc{
-  color:#FFFFFF;
+  color:#000000;
   position:absolute;
   top:320px;
   left:180px;
